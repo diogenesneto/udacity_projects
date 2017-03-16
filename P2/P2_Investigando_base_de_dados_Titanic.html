@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Data_Analyst_ND_Project0</title>
+<title>P2 - Investigando uma Base de Dados (Titanic)</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11751,13 +11751,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Chopsticks!">Chopsticks!<a class="anchor-link" href="#Chopsticks!">&#182;</a></h1><p>A few researchers set out to determine the optimal length of chopsticks for children and adults. They came up with a measure of how effective a pair of chopsticks performed, called the "Food Pinching Performance." The "Food Pinching Performance" was determined by counting the number of peanuts picked and placed in a cup (PPPC).</p>
-<h3 id="An-investigation-for-determining-the-optimum-length-of-chopsticks.">An investigation for determining the optimum length of chopsticks.<a class="anchor-link" href="#An-investigation-for-determining-the-optimum-length-of-chopsticks.">&#182;</a></h3><p><a href="http://www.ncbi.nlm.nih.gov/pubmed/15676839">Link to Abstract and Paper</a><br>
-<em>the abstract below was adapted from the link</em></p>
-<p>Chopsticks are one of the most simple and popular hand tools ever invented by humans, but have not previously been investigated by <a href="https://www.google.com/search?q=ergonomists">ergonomists</a>. Two laboratory studies were conducted in this research, using a <a href="http://dawg.utk.edu/glossary/whatis_rcbd.htm">randomised complete block design</a>, to evaluate the effects of the length of the chopsticks on the food-serving performance of adults and children. Thirty-one male junior college students and 21 primary school pupils served as subjects for the experiment to test chopsticks lengths of 180, 210, 240, 270, 300, and 330 mm. The results showed that the food-pinching performance was significantly affected by the length of the chopsticks, and that chopsticks of about 240 and 180 mm long were optimal for adults and pupils, respectively. Based on these findings, the researchers suggested that families with children should provide both 240 and 180 mm long chopsticks. In addition, restaurants could provide 210 mm long chopsticks, considering the trade-offs between ergonomics and cost.</p>
-<h3 id="For-the-rest-of-this-project,-answer-all-questions-based-only-on-the-part-of-the-experiment-analyzing-the-thirty-one-adult-male-college-students.">For the rest of this project, answer all questions based only on the part of the experiment analyzing the thirty-one adult male college students.<a class="anchor-link" href="#For-the-rest-of-this-project,-answer-all-questions-based-only-on-the-part-of-the-experiment-analyzing-the-thirty-one-adult-male-college-students.">&#182;</a></h3><p>Download the <a href="https://www.udacity.com/api/nodes/4576183932/supplemental_media/chopstick-effectivenesscsv/download">data set for the adults</a>, then answer the following questions based on the abstract and the data set.</p>
-<p><strong>If you double click on this cell</strong>, you will see the text change so that all of the formatting is removed. This allows you to edit this block of text. This block of text is written using <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>, which is a way to format text using headers, links, italics, and many other options. You will learn more about Markdown later in the Nanodegree Program. Hit shift + enter or shift + return to show the formatted text.</p>
-
+<h2 id="1.-Introdu&#231;&#227;o">1. Introdu&#231;&#227;o<a class="anchor-link" href="#1.-Introdu&#231;&#227;o">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11766,8 +11760,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1.-What-is-the-independent-variable-in-the-experiment?">1. What is the independent variable in the experiment?<a class="anchor-link" href="#1.-What-is-the-independent-variable-in-the-experiment?">&#182;</a></h4><ul>
-<li>O Tamanho dos Hashis</li>
+<p>Para este projeto, foi sugerido a escolha de uma base de dados (dentre duas) para elaborarmos uma pergunta de nossa escolha. Fiz a opção pela base de dados do Titanic, que contém os dados de todos os tripulantes (sobreviventes e vítimas).</p>
+<p>Perguntas escolhidas:</p>
+<ul>
+<li>Relação entre sexo e sobreviventes</li>
+<li>Relação entre faixa etária e sobreviventes</li>
 </ul>
 
 </div>
@@ -11778,628 +11775,54 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="2.-What-is-the-dependent-variable-in-the-experiment?">2. What is the dependent variable in the experiment?<a class="anchor-link" href="#2.-What-is-the-dependent-variable-in-the-experiment?">&#182;</a></h4><ul>
-<li>Tempo levado para colocar o amendoin no copo</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="3.-How-is-the-dependent-variable-operationally-defined?">3. How is the dependent variable operationally defined?<a class="anchor-link" href="#3.-How-is-the-dependent-variable-operationally-defined?">&#182;</a></h4><ul>
-<li>Foi determinada pelo número de amendoins recolhidos e colocados no copo</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="4.-Based-on-the-description-of-the-experiment-and-the-data-set,-list-at-least-two-variables-that-you-know-were-controlled.">4. Based on the description of the experiment and the data set, list at least two variables that you know were controlled.<a class="anchor-link" href="#4.-Based-on-the-description-of-the-experiment-and-the-data-set,-list-at-least-two-variables-that-you-know-were-controlled.">&#182;</a></h4><ul>
-<li>Distância entre o copo e os amendois a serem coletados</li>
-<li>Tipo de copo usado no teste (dimensão da boca do copo)</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>One great advantage of ipython notebooks is that you can document your data analysis using code, add comments to the code, or even add blocks of text using Markdown. These notebooks allow you to collaborate with others and share your work. For now, let's see some code for doing statistics.</p>
-
+<h2 id="2.-Importando-as-bibliotecas-necess&#225;rias">2. Importando as bibliotecas necess&#225;rias<a class="anchor-link" href="#2.-Importando-as-bibliotecas-necess&#225;rias">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[340]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-
-<span class="c1"># pandas is a software library for data manipulation and analysis</span>
-<span class="c1"># We commonly use shorter nicknames for certain packages. Pandas is often abbreviated to pd.</span>
-<span class="c1"># hit shift + enter to run this cell or block of code</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">r&#39;C:\Users\diogenes\udacity_projetos\P0\chopstick-effectiveness.csv&#39;</span>
-<span class="c1"># Change the path to the location where the chopstick-effectiveness.csv file is located on your computer.</span>
-<span class="c1"># If you get an error when running this block of code, be sure the chopstick-effectiveness.csv is located at the path on your computer.</span>
-
-<span class="n">dataFrame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="n">dataFrame</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Food.Pinching.Efficiency</th>
-      <th>Individual</th>
-      <th>Chopstick.Length</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>19.55</td>
-      <td>1</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>27.24</td>
-      <td>2</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>28.76</td>
-      <td>3</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>31.19</td>
-      <td>4</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>21.91</td>
-      <td>5</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>27.62</td>
-      <td>6</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>29.46</td>
-      <td>7</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>26.35</td>
-      <td>8</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>26.69</td>
-      <td>9</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>30.22</td>
-      <td>10</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>27.81</td>
-      <td>11</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>23.46</td>
-      <td>12</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>23.64</td>
-      <td>13</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>27.85</td>
-      <td>14</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>20.62</td>
-      <td>15</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>25.35</td>
-      <td>16</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>28.00</td>
-      <td>17</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>23.49</td>
-      <td>18</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>27.77</td>
-      <td>19</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>18.48</td>
-      <td>20</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>23.01</td>
-      <td>21</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>22.66</td>
-      <td>22</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>23.24</td>
-      <td>23</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>22.82</td>
-      <td>24</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>17.94</td>
-      <td>25</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>26.67</td>
-      <td>26</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>28.98</td>
-      <td>27</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>21.48</td>
-      <td>28</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>14.47</td>
-      <td>29</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>28.29</td>
-      <td>30</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>156</th>
-      <td>26.18</td>
-      <td>2</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>157</th>
-      <td>25.93</td>
-      <td>3</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>158</th>
-      <td>28.61</td>
-      <td>4</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>159</th>
-      <td>20.54</td>
-      <td>5</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>160</th>
-      <td>26.44</td>
-      <td>6</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>161</th>
-      <td>29.36</td>
-      <td>7</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>162</th>
-      <td>19.77</td>
-      <td>8</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>163</th>
-      <td>31.69</td>
-      <td>9</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>164</th>
-      <td>24.64</td>
-      <td>10</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>165</th>
-      <td>22.09</td>
-      <td>11</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>166</th>
-      <td>23.42</td>
-      <td>12</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>167</th>
-      <td>28.63</td>
-      <td>13</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>168</th>
-      <td>26.30</td>
-      <td>14</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>169</th>
-      <td>22.89</td>
-      <td>15</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>170</th>
-      <td>22.68</td>
-      <td>16</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>171</th>
-      <td>30.92</td>
-      <td>17</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>172</th>
-      <td>20.74</td>
-      <td>18</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>173</th>
-      <td>27.24</td>
-      <td>19</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>174</th>
-      <td>17.12</td>
-      <td>20</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>175</th>
-      <td>23.63</td>
-      <td>21</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>176</th>
-      <td>20.91</td>
-      <td>22</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>177</th>
-      <td>23.49</td>
-      <td>23</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>178</th>
-      <td>24.86</td>
-      <td>24</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>179</th>
-      <td>16.28</td>
-      <td>25</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>180</th>
-      <td>21.52</td>
-      <td>26</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>181</th>
-      <td>27.22</td>
-      <td>27</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>182</th>
-      <td>17.41</td>
-      <td>28</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>183</th>
-      <td>16.42</td>
-      <td>29</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>184</th>
-      <td>28.22</td>
-      <td>30</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>185</th>
-      <td>27.52</td>
-      <td>31</td>
-      <td>330</td>
-    </tr>
-  </tbody>
-</table>
-<p>186 rows × 3 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's do a basic statistical calculation on the data using code! Run the block of code below to calculate the average "Food Pinching Efficiency" for all 31 participants and all chopstick lengths.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">dataFrame</span><span class="p">[</span><span class="s1">&#39;Food.Pinching.Efficiency&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>25.00559139784947</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This number is helpful, but the number doesn't let us know which of the chopstick lengths performed best for the thirty-one male junior college students. Let's break down the data by chopstick length. The next block of code will generate the average "Food Pinching Effeciency" for each chopstick length. Run the block of code below.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">meansByChopstickLength</span> <span class="o">=</span> <span class="n">dataFrame</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Chopstick.Length&#39;</span><span class="p">)[</span><span class="s1">&#39;Food.Pinching.Efficiency&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">meansByChopstickLength</span>
-
-<span class="c1"># reset_index() changes Chopstick.Length from an index to column. Instead of the index being the length of the chopsticks, the index is the row numbers 0, 1, 2, 3, 4, 5.</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Chopstick.Length</th>
-      <th>Food.Pinching.Efficiency</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>180</td>
-      <td>24.935161</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>210</td>
-      <td>25.483871</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>240</td>
-      <td>26.322903</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>270</td>
-      <td>24.323871</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>300</td>
-      <td>24.968065</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>330</td>
-      <td>23.999677</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="5.-Which-chopstick-length-performed-the-best-for-the-group-of-thirty-one-male-junior-college-students?">5. Which chopstick length performed the best for the group of thirty-one male junior college students?<a class="anchor-link" href="#5.-Which-chopstick-length-performed-the-best-for-the-group-of-thirty-one-male-junior-college-students?">&#182;</a></h4><ul>
-<li>O melhor desempenho foram obtidos com os Hashis de 240mm</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Causes plots to display within the notebook rather than in a new window</span>
-<span class="o">%</span><span class="k">pylab</span> inline
-
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+</pre></div>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">meansByChopstickLength</span><span class="p">[</span><span class="s1">&#39;Chopstick.Length&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">meansByChopstickLength</span><span class="p">[</span><span class="s1">&#39;Food.Pinching.Efficiency&#39;</span><span class="p">])</span>
-            <span class="c1"># title=&quot;&quot;)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Length in mm&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Efficiency in PPPC&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Average Food Pinching Efficiency by Chopstick Length&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Importando-o-CSV">3. Importando o CSV<a class="anchor-link" href="#3.-Importando-o-CSV">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[341]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">titanic_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;titanic_data.csv&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[342]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">titanic_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12412,302 +11835,1675 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Populating the interactive namespace from numpy and matplotlib
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 12 columns):
+PassengerId    891 non-null int64
+Survived       891 non-null int64
+Pclass         891 non-null int64
+Name           891 non-null object
+Sex            891 non-null object
+Age            714 non-null float64
+SibSp          891 non-null int64
+Parch          891 non-null int64
+Ticket         891 non-null object
+Fare           891 non-null float64
+Cabin          204 non-null object
+Embarked       889 non-null object
+dtypes: float64(2), int64(5), object(5)
+memory usage: 83.6+ KB
 </pre>
 </div>
 </div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-Preenchendo-os-campos-nulos">4. Preenchendo os campos nulos<a class="anchor-link" href="#4.-Preenchendo-os-campos-nulos">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Obs:-Entre-os-dados-escolhidos-para-an&#225;lise,-podemos-observar-que-alguns-passageiros-n&#227;o-est&#227;o-com-as-idades-preenchidas.-Faremos-a-remo&#231;&#227;o-destes-valores-para-a-n&#227;o-interfer&#234;ncia-na-an&#225;lise.">Obs: Entre os dados escolhidos para an&#225;lise, podemos observar que alguns passageiros n&#227;o est&#227;o com as idades preenchidas. Faremos a remo&#231;&#227;o destes valores para a n&#227;o interfer&#234;ncia na an&#225;lise.<a class="anchor-link" href="#Obs:-Entre-os-dados-escolhidos-para-an&#225;lise,-podemos-observar-que-alguns-passageiros-n&#227;o-est&#227;o-com-as-idades-preenchidas.-Faremos-a-remo&#231;&#227;o-destes-valores-para-a-n&#227;o-interfer&#234;ncia-na-an&#225;lise.">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[343]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Obtendo as idades não nulas</span>
+
+<span class="n">idades_naonulas</span> <span class="o">=</span> <span class="n">titanic_df</span><span class="p">[</span><span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[344]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">idades_naonulas</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Sex&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Sex
+female    261
+male      453
+dtype: int64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Obs:-Ser&#227;o-usados-somente-os-passageiros-que-estiverem-com-a-idade-atribu&#237;da,-removeremos-o-restante-do-DataFrame">Obs: Ser&#227;o usados somente os passageiros que estiverem com a idade atribu&#237;da, removeremos o restante do DataFrame<a class="anchor-link" href="#Obs:-Ser&#227;o-usados-somente-os-passageiros-que-estiverem-com-a-idade-atribu&#237;da,-removeremos-o-restante-do-DataFrame">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[345]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">titanic_df</span> <span class="o">=</span> <span class="n">idades_naonulas</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[346]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Checando que os valores foram preenchidos</span>
+
+<span class="n">titanic_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 714 entries, 0 to 890
+Data columns (total 12 columns):
+PassengerId    714 non-null int64
+Survived       714 non-null int64
+Pclass         714 non-null int64
+Name           714 non-null object
+Sex            714 non-null object
+Age            714 non-null float64
+SibSp          714 non-null int64
+Parch          714 non-null int64
+Ticket         714 non-null object
+Fare           714 non-null float64
+Cabin          185 non-null object
+Embarked       712 non-null object
+dtypes: float64(2), int64(5), object(5)
+memory usage: 72.5+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Limpando-as-colunas-n&#227;o-utilizadas">5. Limpando as colunas n&#227;o utilizadas<a class="anchor-link" href="#5.-Limpando-as-colunas-n&#227;o-utilizadas">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[347]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Limpando as colunas Pclass, Name, Ticket, SibSP, Parch, Ticket, Fare, Cabin e Embarked</span>
+<span class="n">titanic_df</span> <span class="o">=</span> <span class="n">titanic_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Ticket&#39;</span><span class="p">,</span><span class="s1">&#39;SibSp&#39;</span><span class="p">,</span> <span class="s1">&#39;Parch&#39;</span><span class="p">,</span> <span class="s1">&#39;Ticket&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="s1">&#39;Cabin&#39;</span><span class="p">,</span> <span class="s1">&#39;Embarked&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[348]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">titanic_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 714 entries, 0 to 890
+Data columns (total 4 columns):
+PassengerId    714 non-null int64
+Survived       714 non-null int64
+Sex            714 non-null object
+Age            714 non-null float64
+dtypes: float64(1), int64(2), object(1)
+memory usage: 27.9+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Melhorando-a-visualiza&#231;&#227;o-dos-Dados">6. Melhorando a visualiza&#231;&#227;o dos Dados<a class="anchor-link" href="#6.-Melhorando-a-visualiza&#231;&#227;o-dos-Dados">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[349]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Modificando o campo sobrevivência dando nome de True e False para Sobrevivente</span>
+<span class="n">survived_map</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;Falso&#39;</span> <span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Verdadeiro&#39;</span><span class="p">}</span>
+<span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">survived_map</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[350]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">titanic_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[350]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Sex</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Falso</td>
+      <td>male</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Verdadeiro</td>
+      <td>female</td>
+      <td>38.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Verdadeiro</td>
+      <td>female</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Verdadeiro</td>
+      <td>female</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Falso</td>
+      <td>male</td>
+      <td>35.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[351]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Checando a idade máxima</span>
+<span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[351]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>80.0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[352]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Checando a idade mínima</span>
+<span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[352]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.41999999999999998</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[353]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Agrupando idades por faixas etárias (de 10 em 10 anos)</span>
+<span class="n">faixa_idades</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0-9&#39;</span><span class="p">,</span> <span class="s1">&#39;10-19&#39;</span><span class="p">,</span> <span class="s1">&#39;20-29&#39;</span><span class="p">,</span> <span class="s1">&#39;30-39&#39;</span><span class="p">,</span> <span class="s1">&#39;40-49&#39;</span><span class="p">,</span> <span class="s1">&#39;50-59&#39;</span><span class="p">,</span> <span class="s1">&#39;60-69&#39;</span><span class="p">,</span> <span class="s1">&#39;70-80&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[354]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;age_group&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">titanic_df</span><span class="o">.</span><span class="n">Age</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">labels</span><span class="o">=</span><span class="n">faixa_idades</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[355]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;age_group&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">630</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[355]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;10-19&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-Analisando-os-Dados">7. Analisando os Dados<a class="anchor-link" href="#7.-Analisando-os-Dados">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="7.1-N&#250;mero-de-Sobreviventes">7.1 N&#250;mero de Sobreviventes<a class="anchor-link" href="#7.1-N&#250;mero-de-Sobreviventes">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Primeiramente-vamos-analisar-o-n&#250;mero-total-de-passageiros-e-o-n&#250;mero-total-de-homens-e-mulheres">Primeiramente vamos analisar o n&#250;mero total de passageiros e o n&#250;mero total de homens e mulheres<a class="anchor-link" href="#Primeiramente-vamos-analisar-o-n&#250;mero-total-de-passageiros-e-o-n&#250;mero-total-de-homens-e-mulheres">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[356]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Número de Passageiros e números de sobreviventes (conforme o kaggle)</span>
+<span class="n">passageiros_kaggle</span> <span class="o">=</span> <span class="mi">2224</span>
+<span class="n">sobreviventes_kaggle</span> <span class="o">=</span> <span class="mi">722</span>
+<span class="n">naosobreviventes_kaggle</span> <span class="o">=</span> <span class="n">passageiros_kaggle</span> <span class="o">-</span> <span class="n">sobreviventes_kaggle</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[357]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">passageiros_kaggle</span>
+<span class="k">print</span> <span class="n">sobreviventes_kaggle</span>
+<span class="k">print</span> <span class="n">naosobreviventes_kaggle</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2224
+722
+1502
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[358]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Número de Passageiros e número de sobreviventes (conforme a amostra)</span>
+<span class="n">passageiros_sample</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">titanic_df</span><span class="p">)</span>
+<span class="n">sobreviventes_sample</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">titanic_df</span><span class="p">[</span><span class="n">titanic_df</span><span class="o">.</span><span class="n">Survived</span><span class="o">==</span><span class="s1">&#39;Verdadeiro&#39;</span><span class="p">])</span>
+<span class="n">naosobreviventes_sample</span> <span class="o">=</span> <span class="n">passageiros_sample</span> <span class="o">-</span> <span class="n">sobreviventes_sample</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[359]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">passageiros_sample</span>
+<span class="k">print</span> <span class="n">sobreviventes_sample</span>
+<span class="k">print</span> <span class="n">naosobreviventes_sample</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>714
+290
+424
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[360]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sobreviventes_data</span> <span class="o">=</span> <span class="n">titanic_df</span><span class="p">[</span><span class="n">titanic_df</span><span class="o">.</span><span class="n">Survived</span><span class="o">==</span><span class="s1">&#39;Verdadeiro&#39;</span><span class="p">]</span>
+<span class="n">naosobreviventes_data</span> <span class="o">=</span> <span class="n">titanic_df</span><span class="p">[</span><span class="n">titanic_df</span><span class="o">.</span><span class="n">Survived</span><span class="o">==</span><span class="s1">&#39;Falso&#39;</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[361]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sobreviventes_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 290 entries, 1 to 889
+Data columns (total 5 columns):
+PassengerId    290 non-null int64
+Survived       290 non-null object
+Sex            290 non-null object
+Age            290 non-null float64
+age_group      290 non-null category
+dtypes: category(1), float64(1), int64(1), object(2)
+memory usage: 11.7+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[362]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">naosobreviventes_data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 424 entries, 0 to 890
+Data columns (total 5 columns):
+PassengerId    424 non-null int64
+Survived       424 non-null object
+Sex            424 non-null object
+Age            424 non-null float64
+age_group      424 non-null category
+dtypes: category(1), float64(1), int64(1), object(2)
+memory usage: 17.0+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[363]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculando a porcentagem de sobreviventes (de acordo com a base do kaggle e com a amostra)</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="k">print</span> <span class="s2">&quot;Total (Kaggle): {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">passageiros_kaggle</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Total de Sobreviventes (Kaggle): {} - {}{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobreviventes_kaggle</span><span class="p">,</span> <span class="n">sobreviventes_kaggle</span><span class="o">/</span><span class="n">passageiros_kaggle</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Total de Não Sobreviventes (Kaggle): {} - {}{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">naosobreviventes_kaggle</span><span class="p">,</span> <span class="n">naosobreviventes_kaggle</span><span class="o">/</span><span class="n">passageiros_kaggle</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total (Kaggle): 2224
+Total de Sobreviventes (Kaggle): 722 - 32.464028777%
+Total de Não Sobreviventes (Kaggle): 1502 - 67.535971223%
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[364]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="k">print</span> <span class="s2">&quot;Total (sample): {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">passageiros_sample</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Total de Sobreviventes (sample): {} - {}{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sobreviventes_sample</span><span class="p">,</span> <span class="n">sobreviventes_sample</span><span class="o">/</span><span class="n">passageiros_sample</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Total de Não Sobreviventes (sample): {} - {}{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">naosobreviventes_sample</span><span class="p">,</span> <span class="n">naosobreviventes_sample</span><span class="o">/</span><span class="n">passageiros_sample</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total (sample): 714
+Total de Sobreviventes (sample): 290 - 40.6162464986%
+Total de Não Sobreviventes (sample): 424 - 59.3837535014%
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Obs:-Usaremos-os-dados-do-sample,-pois-est&#227;o-condizentes-com-os-dados-da-amostra-total">Obs: Usaremos os dados do sample, pois est&#227;o condizentes com os dados da amostra total<a class="anchor-link" href="#Obs:-Usaremos-os-dados-do-sample,-pois-est&#227;o-condizentes-com-os-dados-da-amostra-total">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.-Rela&#231;&#227;o-entre-sexo-e-sobreviventes-(Qual-g&#234;nero-tem-a-maior-chance-de-sobrevic&#234;ncia?)">8. Rela&#231;&#227;o entre sexo e sobreviventes (Qual g&#234;nero tem a maior chance de sobrevic&#234;ncia?)<a class="anchor-link" href="#8.-Rela&#231;&#227;o-entre-sexo-e-sobreviventes-(Qual-g&#234;nero-tem-a-maior-chance-de-sobrevic&#234;ncia?)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="8.1-Hypothesis">8.1 Hypothesis<a class="anchor-link" href="#8.1-Hypothesis">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="H0-=-O-g&#234;nero-n&#227;o-tem-impacto-na-sobreviv&#234;ncia">H0 = O g&#234;nero n&#227;o tem impacto na sobreviv&#234;ncia<a class="anchor-link" href="#H0-=-O-g&#234;nero-n&#227;o-tem-impacto-na-sobreviv&#234;ncia">&#182;</a></h4><h4 id="HA-=-O-g&#234;nero-tem-impacto-na-sobreviv&#234;ncia">HA = O g&#234;nero tem impacto na sobreviv&#234;ncia<a class="anchor-link" href="#HA-=-O-g&#234;nero-tem-impacto-na-sobreviv&#234;ncia">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[365]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tabela_sexo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">],</span><span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">],</span> <span class="n">margins</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[366]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">titanic_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 714 entries, 0 to 890
+Data columns (total 5 columns):
+PassengerId    714 non-null int64
+Survived       714 non-null object
+Sex            714 non-null object
+Age            714 non-null float64
+age_group      714 non-null category
+dtypes: category(1), float64(1), int64(1), object(2)
+memory usage: 28.7+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[367]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tabela_sexo</span><span class="o">.</span><span class="n">female</span><span class="o">.</span><span class="n">All</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[367]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>261</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[368]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Mulheres sobreviventes</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="k">print</span> <span class="s2">&quot;Total de Mulheres: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tabela_sexo</span><span class="o">.</span><span class="n">female</span><span class="o">.</span><span class="n">All</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Total de Mulheres Sobreviventes: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tabela_sexo</span><span class="o">.</span><span class="n">male</span><span class="o">.</span><span class="n">Verdadeiro</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Porcentagem de Mulheres Sobreviventes: {}{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tabela_sexo</span><span class="o">.</span><span class="n">female</span><span class="o">.</span><span class="n">Verdadeiro</span> <span class="o">/</span> <span class="n">tabela_sexo</span><span class="o">.</span><span class="n">female</span><span class="o">.</span><span class="n">All</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total de Mulheres: 261
+Total de Mulheres Sobreviventes: 93
+Porcentagem de Mulheres Sobreviventes: 75.4789272031%
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[369]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Homens sobreviventes</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="k">print</span> <span class="s2">&quot;Total de Homens: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tabela_sexo</span><span class="o">.</span><span class="n">male</span><span class="o">.</span><span class="n">All</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Total de Homens Sobreviventes: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tabela_sexo</span><span class="o">.</span><span class="n">male</span><span class="o">.</span><span class="n">Verdadeiro</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Porcentagem de Homens Sobreviventes: {}{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tabela_sexo</span><span class="o">.</span><span class="n">male</span><span class="o">.</span><span class="n">Verdadeiro</span> <span class="o">/</span> <span class="n">tabela_sexo</span><span class="o">.</span><span class="n">male</span><span class="o">.</span><span class="n">All</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total de Homens: 453
+Total de Homens Sobreviventes: 93
+Porcentagem de Homens Sobreviventes: 20.5298013245%
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="9.-Rela&#231;&#227;o-entre-idade-e-sobreviventes">9. Rela&#231;&#227;o entre idade e sobreviventes<a class="anchor-link" href="#9.-Rela&#231;&#227;o-entre-idade-e-sobreviventes">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="9.1-Hypothesis">9.1 Hypothesis<a class="anchor-link" href="#9.1-Hypothesis">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="H0-=-A-idade-n&#227;o-tem-impacto-na-sobreviv&#234;ncia">H0 = A idade n&#227;o tem impacto na sobreviv&#234;ncia<a class="anchor-link" href="#H0-=-A-idade-n&#227;o-tem-impacto-na-sobreviv&#234;ncia">&#182;</a></h4><h4 id="HA-=-A-idade-tem-impacto-na-sobreviv&#234;ncia">HA = A idade tem impacto na sobreviv&#234;ncia<a class="anchor-link" href="#HA-=-A-idade-tem-impacto-na-sobreviv&#234;ncia">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="9.2-Recarregando-os-dados-(sem-eliminar-as-idades-em-branco)">9.2 Recarregando os dados (sem eliminar as idades em branco)<a class="anchor-link" href="#9.2-Recarregando-os-dados-(sem-eliminar-as-idades-em-branco)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[370]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">titanic_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;titanic_data.csv&#39;</span><span class="p">)</span>
+<span class="n">titanic_df</span> <span class="o">=</span> <span class="n">titanic_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Ticket&#39;</span><span class="p">,</span><span class="s1">&#39;SibSp&#39;</span><span class="p">,</span> <span class="s1">&#39;Parch&#39;</span><span class="p">,</span> <span class="s1">&#39;Ticket&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">,</span> <span class="s1">&#39;Cabin&#39;</span><span class="p">,</span> <span class="s1">&#39;Embarked&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">survived_map</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;Falso&#39;</span> <span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Verdadeiro&#39;</span><span class="p">}</span>
+<span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">survived_map</span><span class="p">)</span>
+<span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;age_group&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">titanic_df</span><span class="o">.</span><span class="n">Age</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">labels</span><span class="o">=</span><span class="n">faixa_idades</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[371]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tabela_idade</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">],</span><span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;age_group&#39;</span><span class="p">],</span> <span class="n">margins</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[372]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tabela_idade</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[372]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>age_group</th>
+      <th>0-9</th>
+      <th>10-19</th>
+      <th>20-29</th>
+      <th>30-39</th>
+      <th>40-49</th>
+      <th>50-59</th>
+      <th>60-69</th>
+      <th>70-80</th>
+      <th>All</th>
+    </tr>
+    <tr>
+      <th>Survived</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Falso</th>
+      <td>26</td>
+      <td>71</td>
+      <td>146</td>
+      <td>86</td>
+      <td>53</td>
+      <td>25</td>
+      <td>13</td>
+      <td>4</td>
+      <td>424</td>
+    </tr>
+    <tr>
+      <th>Verdadeiro</th>
+      <td>38</td>
+      <td>44</td>
+      <td>84</td>
+      <td>69</td>
+      <td>33</td>
+      <td>17</td>
+      <td>4</td>
+      <td>1</td>
+      <td>290</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <td>64</td>
+      <td>115</td>
+      <td>230</td>
+      <td>155</td>
+      <td>86</td>
+      <td>42</td>
+      <td>17</td>
+      <td>5</td>
+      <td>714</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[373]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Criação do gráfico</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">titanic_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;age_group&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribuicao dos Grupos de Idades&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Total&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Grupos de Idades&#39;</span><span class="p">);</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
 
 <div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAisAAAGHCAYAAABxmBIgAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
-AAAPYQAAD2EBqD+naQAAIABJREFUeJzt3XmcXFWd9/HPl7AKEjIqIAgq2YRHRRMVUNmDCUFBGEU6
-IYI6KsNoMIyjgo/iOD7i6AyIYsYRRcBIK8qqLMEo+yKYIKgEOolssoQlIcgO4ff8cU7BzU11d1Wl
-uut25/t+verVXeeeuvU7Vbdu/eqcc+9VRGBmZmZWVet0OgAzMzOzvjhZMTMzs0pzsmJmZmaV5mTF
-zMzMKs3JipmZmVWakxUzMzOrNCcrZmZmVmlOVszMzKzSnKyYmZlZpTlZsbWCpL0lvSDpnVVcX531
-j87rn9lA3a9Jem4g4mgnSeMkzZP0qKSVkqbm8p0kXSfp8Vy+Q6ttknS1pEvbH/3gKWxb+3c6lppm
-tseqkTRH0qImHzMit/eEgYqriqrcbicra0DSkfmNva7TsVSRpL/l16d8WympE9tev9eWkPSxUqxP
-SbpN0kmSXtXs+gZJAC904onzF0G99/gFSY+Vqs8BxgPHADOAmyStB/wSeDlwVC6/h9bbFFTnfVkT
-g9YGSRMk/VTSPZKekfSIpEslfbhDn9OmSdpa0nGS3lhn8aB/PvK+75zBfM5mSHpXfr026XQsjVq3
-0wEMcdOAO4B3SNouIv7a6YAqJoA/AN9ebUFER75cGxTAsaQvzY2AXYFPAVMkvSkino2I30raKCKe
-7WSg2XHAVzv03AE8AXwCUGnZiz0jkjYG3gYcFxH/Uyj/P8DWwLER8ZNCeatt2pPhkayUX8uBeRLp
-k8D3gPuAM4DFwKbA3sCpwObAfw1GLGvoNaTPwSLgz6VlhzNIr2dB1bfBdwNfBk4BHu9wLA1xstIi
-Sa8H3gkcCPwAmA78RwfiELB+RDwz2M/doL9FxJmdDqIFF0fELfn/H0l6FPg08D7gbICKJCq1xK+T
-yd9zEdHdT50t8t8VjZS32qaIeL7Zx6ytJL2LlKhcAbw3Ip4qLD5J0ttIPWFDQa/JSESsHMxAhojB
-Tt7W2JDo4quo6cAy4EJSN/b04kJJ6+ex+f8tP1DSZrm79euFsg0kfVXSYklPS7pL0vG5m7xW58Xx
-REkzJP0FeJr0KwhJn5d0Te7GfVLSjZLeX+f5N5J0sqSHJT0m6RxJ2+R1H1uqu7Wk0yQ9kOP6k6TD
-1uylWy2eiZLm5lj+Luk3kt5ep95oSb+UtEzSE5KulTS5Tr1tJF2gNAdiqaT/AtZnzT6gv8uPf31+
-jtXmrCjNl1gg6f9Iuiy/B3+TdHSdGDfM73dPfl3vk/QLSa+tU/eTkpbkIanrJb21tHyV+R2l7eQg
-SX8uvHeT6qx/7xz3Uzmej5XXuSYk/QfpF3sA386x9Uj6CTAvl5+Xyy+t16bCuj4s6Yb8/j8i6XJJ
-exWWrzZnpYXPViOv2WsknZrft6fy+3OypHUkjc3r+pc6j9stL/vHfl62ANaV9I382Xtc0rmStiqs
-62tK+5FRdZ7n1Pz5Xq+8rOArwPPAoaVEJQUQ8YeI+Gmddfe5PeY6k5T2RU9IWq60jxlXqvO1/FqM
-zZ/rxyQ9lN+D9Ut1p+T3drnSPuI2SV/Ny/YGrs2vWW1YcqWkaXn5anNWlMySdEtux4OSLpL0lj5e
-LyR9Ja/7k33Va5SkXZT2fSvya3WZpJ1LdWqv0+sknaH0vbJc0imSNijV7Xffnj+Pte+e2lD9yuK2
-lev1+zkYTO5Zad004OyIeF5SN3CEpIkRMR/Sr25J5wEHSvrn0rDHQaTXvhte7B25EHgH8H2gB9gR
-+FdgNHBw6bknA4eQfhUtA+7O5TNJv/rnkL6cpwFnS9o3Ioo78DnA+4HTgBuBvYALKHVdStoSuAF4
-FvgO8AgwFfixpI0jYnYDr9P6kl5RKnsiIp7Oz/Fm0i+7ZaQP0AvAEcAVkt4dEQsKsVwLrJdjeZTU
-vXuhpPdHxK9zvZcBlwFbAicBS4EPA5PK7WvSmPz3kUJZeX0BvBK4GDgL+BnpvfuWpJsj4rc5xhG5
-zm7AT4ETSF3v7wF2AO4qrPMw4GXAbFKy9HnSezqmsE31Nk9jD+CD+bGPA5/Jj902IlbkWN5G2vbu
-Af4vabv5d+ChXtZZj+q8xwDPRsTf82uxDPhv4CfAXODv+TnuyW06EZgP3N9bm/JO9ovAVcCXSMNM
-O5GGfn5XeNwqgdHcZ2sP+n/NtiZ9bjbJ67wd2CY/bsOIWCTp96QfMN8rrX86adv9VZ3Xa5XQScMa
-z5M+F6/OsVwqaULu1fsJaf7PB0m9u7U2b0Dax5wZEXUTTqVhuT2AeRFxf706veh3e1T6AfFr0mv9
-JWBj0nykayS9NSL+ltdVe69+CSzJ63pnbuemwD/l9b0JOJ+0fXwJeAYYm+tCGvb5Sr7NJu0nAK4p
-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
-M6s0JytmZmZWaR1PViQdI+kGSY9JWirpXEnj6tTbXtL5kh6V9Lik30t6TT/r/qCkhZKeknSzpH0H
-riVmZmY2EDqerAC7At8FdgImAesBl0raqFZB0mjgKuBWYDfgTcB/AE/3tlJJ7wTOBE4B3gKcD5wn
-aYeBaYaZmZkNhHU7HUBETC3el3Q48CAwEbg6F38NuDAijilUvaOfVc8ELo6IE/L9L0vaB/gUcOSa
-xm1mZmaDowo9K2WbAQEsA5AkYD9gkaRL8lDR9ZIO6Gc9uwDzSmVzc7mZmZkNEZVKVnJi8m3g6oi4
-NRdvDmwCfB64CNgHOBc4R9KufaxuS2BpqWxpLjczM7MhouPDQCWzgR2AdxXKagnVeRHxnfz/LXlO
-yhGkuSxtNWvWLEaOHLlKWVdXF11dXe1+KjMzsyGnu7ub7u7uVcpWrFgxYM9XmWRF0snAVGDXiLi/
-sOhh4HlgYekhC1k1qSl7ANiiVLZFLu/TiSeeyIQJE/qN2czMbG1U7wf8ggULmDhx4oA8XyWGgXKi
-cgCwZ0TcXVwWEc8BNwLjSw8bB9zVx2qvA/Yule2Ty83MzGyI6HjPiqTZQBewP/CEpFpvyIqIqB2a
-/C3gZ5KuAi4D9gXeC+xeWM/pwL0RcWwuOgm4XNLRwIX5OSYCHx/gJpmZmVkbVaFn5QhgU+By4L7C
-7eBahYg4L9f7HHAL8FHgoIgo9pJsQ2HybF42DfgE8EfgIOCAwsRdMzMzGwI63rMSEQ0lTBFxGnBa
-H8v3qlN2NnB2q7GZmZlZ51WhZ8XMzMysV05WzMzMrNKcrJiZmVmlOVkxMzOzSnOyYmZmZpXmZMXM
-zMwqzcmKmZmZVZqTFTMzM6s0JytmZmZWaU5WzMzMrNKcrJiZmVmlOVkxMzOzSnOyYmZmZpXmZMXM
-zMwqzcmKmZmZVZqTFTMzM6s0JytmZmZWaU5WzMzMrNKcrJiZmVmlOVkxMzOzSnOyYmZmZpXmZMXM
-zMwqzcmKmZmZVZqTFTMzM6s0JytmZmZWaU5WzMzMrNKcrJiZmVmlOVkxMzOzSnOyYmZmZpXmZMXM
-zMwqzcmKmZmZVZqTFTMzM6s0JytmZmZWaU5WzMzMrNKcrJiZmVmlOVkxMzOzSnOyYmZmZpXmZMXM
-zMwqreFkRdJYSd2SNq2zbKSkMyW9ob3hmZmZ2dqumZ6VfwPuiYjHygsiYgVwD/CFdgVmZmZmBs0l
-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
-NHHXzMxsWOrunsOkSTsDM4BtgRlMmrQz3d1zOhxZ8zresxIRTSdM9eapRMRedcrOBs5uMTQzM7Mh
-a9SoUVxyyYUsWrSIxYsXD+nzrHQ8WTEzM7OBM3bs2CGbpNRUYRjIzMzMrFdOVszMzKzSnKyYmZlZ
-pTlZMTMzs0pzsmJmZmaV5mTFzMzMKs3JipmZmVWakxUzMzOrNCcrZmZmVmlOVszMzKzSnKyYmZlZ
-pTlZMTMzs0pzsmJmZmaV5mTFzMzMKs3JipmZmVWakxUzMzOrNCcrZmZmVmlOVszMzKzSnKyYmZlZ
-pTlZMTMzs0pzsmJmZmaV5mTFzMzMKs3JipmZmVWakxUzMzOrNCcrZmZmVmlOVszMzKzSnKyYmZlZ
-pTlZMTMzs0pzsmJmZmaV5mTFzMzMKs3JipmZmVWakxUzMzOrNCcrZmZmVmlOVszMzKzSnKyYmZlZ
-pTlZMTMzs0pzsmJmZmaV5mTFzMzMKs3JipmZmVWakxUzMzOrtI4nK5KOkXSDpMckLZV0rqRxpTrH
-SVoo6XFJyyT9RtI7+lnvYZJekLQy/31B0pMD25pq6e7u7nQIbeX2VNdwagu4PVU2nNoCw689A6Xj
-yQqwK/BdYCdgErAecKmkjQp1bgf+BXgj8C7gzlznFf2sewWwZeH22rZGXnHD7UPg9lTXcGoLuD1V
-NpzaAsOvPQNl3U4HEBFTi/clHQ48CEwErs51flaqczTwMeDNwGV9rz4eame8ZmZmNriq0LNSthkQ
-wLJ6CyWtB3wSeBS4uZ91bSLpTkl3SzpP0g7tDdXMzMwGWqWSFUkCvg1cHRG3lpbtJ+nvwNPAUcA+
-EVE3ocluBz4K7A9MJ7X1WklbDUjwZmZmNiA6PgxUMhvYgTQvpex3wI7AK4GPA7+Q9I6IeLjeiiLi
-euD62n1J1wELSb0yx/Xy/BsCLFy4sNX4K2XFihUsWLCg02G0jdtTXcOpLeD2VNlwagsMr/YUvjs3
-bPe6FRHtXmdLJJ0MvA/YNSLubqB+D/CjiPjPJp7jLOC5iJjey/JpwE8bXZ+ZmZmtZnpEnNnOFVai
-ZyUnKgcAuzeSqGTrABs08RzrAG8CLuyj2lzSkNGdpOEmMzMza8yGwOtI36Vt1fGeFUmzgS7S3JKe
-wqIVEfG0pJcBXwQuAO4nDQN9CjgEmBgRC/N6TgfujYhj8/0vkYaBFpMm7X4uP8fEiLhtMNpmZmZm
-a64KPStHkI7+ubxU/hHgDGAl8Abgw6RE5RHgRuDdtUQl2ybXrRkF/IB0fpXlwHxgFycqZmZmQ0vH
-e1bMzMzM+lKpQ5fNzMzMypysmJmZWaUN+2RF0q6SLpB0b76Y4f516mwv6XxJj+aLJf5e0msKyzeQ
-9D1JD0v6u6RfStp8cFvSf1skbSzpZEn3SHpS0l8kfbJUpxJtybH0exHLXO+rku7LbfqNpDGl5R1v
-U39tkbSupP+UdEvexu6VdLqkV1etLY20p0797+dtcmapfEi1ZyjsCxppy1DaF0g6QtLNklbk27WS
-ppTqVH4fUIil1/YMwf1Av+9Noe7A7gMiYljfgCnAV0mHRq8E9i8tHw08DBxPutbQ64H3Aq8s1Pkf
-0uHMuwNvBa4FrqpgW35AOqJqV2Bb4J+A54D3Vq0tOZaLgBnA9qTDyn+dY9uoUOfzpEsvvJd0Icvz
-gCXA+lVqU39tATYlHc73j8BY4B2ko9VuKK2n421p9L0p1D0QuAm4B5g5VNszVPYFDbZlyOwLgP1I
-+7bRwBjga8AzwPZ5+ZDYBzTSniG4H+jzvSnUG/B9wKC/kZ28AS+w+hd8N3B6H4/ZNL85BxbKxud1
-vaNibfkT8MVS2R+Ar1a5LYVYXpljeXeh7D5gVun9eAo4uMptqteWOnXeRko6X1PltvTVHmBr4O68
-I76juKMaau0ZwvuCem0Z6vuCR4CP5P+H5D6gt/bUWTZk9gP12jJY+4BhPwzUF0kiZY6LJF2Su1Sv
-l3RAodpE0iHev60VRMTtpDdnl0ENuH/XAvsrX/9I0p6k7L12gp6qt2WVi1hKej3p0PNivI8Bv+el
-eN9GNdvU5wU5S3Uezfer/P6s1p78+TkD+GasehqBmiHTniG+L6i3rQ3JfYGkdSQdAryMdC23obwP
-KLfnul6qDYn9QL22DOY+YK1OVoDNgU1I3YwXAfsA5wLnSNo119kSeDZ/QIqW5mVV8mnS9Y/+JulZ
-Upv+JSKuycsr25a80ZcvYrkl6UO8tFS9GO8WVKxNvbSlXGcD4BvAmRHxeC6u5PvTR3u+QIr35F4e
-OpTaMyT3BX28N0NqXyDpjUoXqn2GdI24A/OX2lDdB9Rrz2rn+BoK+4F+2jJo+4AqnBSuk2rJ2nkR
-8Z38/y2S3kk6Wd1VnQmrZTOBnUhju3cDuwGzJd0XEb/raGT96+silkNNn22RtC7wC9JO+MhBjKtV
-q7VH0kTS9vbWTgW1Buq9P0N1X9DbtjbU9gW3kS5UOxL4AHCGpN06G9IaqdueYsIyhPYDvb03GzOI
-+4C1vWflYeB50i+QooWkSWkADwDrS9q0VGeLvKwSJG0I/D/g6Ii4KCL+HBGzgZ8Dn83VKtkWpWtD
-TQX2iIj7C4seAESKr6gYb6Xa1EdbastrO6htgPcUfk1BxdoCfbbn3cCrgHskPSfpOeC1wAmS/prr
-DKX2DLl9QW9tGYr7goh4PiL+GhE3RcQXgZuBoxiC+wDosz3A0NoP9NGWQd0HrNXJSkQ8Rzp1//jS
-onHAXfn/+aSd2N61hZLGk3ZgvY1BdsJ6+bayVL6Sl97nyrVFL13Ecs8oXcQyIu4gbdDFeDcl/WK8
-NhdVpk19tSUvr+2gtgP2jojlpSqVaUt+7r7acwbpiJkdC7f7gG8Ck3OdIdOeobYv6Oe9GZL7gpJ1
-gA2G2j6gDy9eeHeo7QfqqLVlcPcBnZ5ZPNA3UlfVjsBbSDOQP5Pvb5OXv590heV/Ih2e9SngWdJ1
-hGrrmE2a5bwHacLQNXTmMLL+2nIZcAvpELHXAYcDTwKfqFpbCrEsJx1euUXhtmGhzudIs8/fRzpM
-8zxgEasettjxNvXXFtKQ6/mkL743leqsV6W2NPre1HnMKkcCDLX2DJV9QYNtGTL7AuDruS2vJR2a
-fDzpC26vvHxI7AMaac8Q3A/0+d7UqT9g+4BBfyM78GLvTvpiX1m6nVqoczjpnARPAAsonIsgL98A
-+C6pq/jvpKx486q1hTRJ8EekY92fAG4FjqpiW3Is9dqyEvhwqd5XSBn7k6SjGcZUrU39tSV/2MvL
-ao/ZrUptaea9KT3mr3V2VEOqPUNhX9BIW4bSvgD4Yd52niL1olxK6ctwKOwDGmnPENwP9PvelOoP
-2D7AFzI0MzOzSlur56yYmZlZ9TlZMTMzs0pzsmJmZmaV5mTFzMzMKs3JipmZmVWakxUzMzOrNCcr
-ZmZmVmlOVszMzKzSnKyYWWVIOkxS+Vop/T1md0kr61wszcyGCScrZmsZST+WdE4F4rhD0sw6i5o9
-rfY1wKsj4rE2hGVmFbRupwMwM1sTEfE88GCn4zCzgeOeFTNbhaSRkn4o6UFJKyTNk/TmwvLjJN0k
-6dDcO/KopG5JGxfqbCLpp5Iel3SPpE9LukzSCXn5ZaSLup0o6QVJK0sxvEfSrZL+LuliSVv0Ee/u
-eR2b5vuHSVre4jreI2mBpCdzu18lad+8nhW5TRsWHneZpO9IOlHSMkkPSPqYpJdJOlXSY5IWSZrS
-ynthZomTFTMr+yXwCmAyMIF09eF5kjYr1BkNHABMBfYjXRH8C4XlJwK7AO/N69kDeGth+UHA34Av
-AVsCry4s2xj4V2A66fL02wL/1U/M5aGjl7WwDoDjgCNz7NsCZwEzgUNIbX0P8OnSYz4MPAS8HfgO
-8H3SlWWvIbX5UuCMYpJjZs1xsmJmL5L0LuBtwMERcVNELImIzwErgA8UqwKHRcTCiLgG+Amwd17H
-JqQv8H+NiMsj4lbgIxSGnSNiObASeDwiHoyI4jDOusAn8/P/ETi5tu4mtLKOAL4YEddHxM3Aj4Dd
-gCMi4pbczl8Ce5Yed3NEfD0ilgDfAJ4GHoqIH+WyrwKvBN6MmbXEc1bMrGhH4OXAMknF8g1JvSk1
-d0bEk4X79wOb5/+3I+1bbqwtjIjHJN3eYAxPRsSdvay7Ua2u40+F/5fm9dxVKnt76TG31P6JiBck
-PVJcT0Qsza9ls20ws8zJipkVbQLcRxrWUWnZo4X/nystC9rXU1tv3eVYBmodxcdFL+spt7NenXIZ
-dR5nZg1ysmJmRQtIc0hWRsTdLa7jr8DzpB6Iv0GatAuMA64o1HsWGNF6qGa2tnCyYrZ22kzSjqWy
-RyJinqTrgfMkfR7oAbYmTS49JyIW9LfiiHhc0unAf+UTvD0EfIU0R6U4EfZOYDdJPweeiYhH1qA9
-zfa8DNQ6zGwAuFvSbO20O6kXpXj7cl62L3AlcCpwO3Am6ciYpU2sfxZwLfAr0tEwVwO3kSaf1nwZ
-eB2whDU/T0qzJ5Jr1zrqPabRMjNrkCL8GTKzgSXpZcC9wNER8eNOx2NmQ4uHgcys7SS9BXgDcAOw
-GakXJYDzOxmXmQ1NTlbMbKB8ljSp9llgPvDuiFjW2ZDMbCjyMJCZmZlVmifYmpmZWaU5WTEzM7NK
-c7JiZmZmleZkxczMzCrNyYqZmZlVmpMVMzMzqzQnK2ZmZlZpTlbMzMys0pysmJmZWaX9f2PkOi3q
-PPXGAAAAAElFTkSuQmCC
+<img src="data:image/png;base64,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
+TkSuQmCC
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[374]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">titanic_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 5 columns):
+PassengerId    891 non-null int64
+Survived       891 non-null object
+Sex            891 non-null object
+Age            714 non-null float64
+age_group      714 non-null category
+dtypes: category(1), float64(1), int64(1), object(2)
+memory usage: 28.8+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[375]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Transformando novamente o campor Survived em Booleano para calcular as médias</span>
+<span class="n">survived_map</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Falso&#39;</span><span class="p">:</span> <span class="bp">False</span> <span class="p">,</span> <span class="s1">&#39;Verdadeiro&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+<span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">titanic_df</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">survived_map</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[376]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">titanic_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 5 columns):
+PassengerId    891 non-null int64
+Survived       891 non-null bool
+Sex            891 non-null object
+Age            714 non-null float64
+age_group      714 non-null category
+dtypes: bool(1), category(1), float64(1), int64(1), object(1)
+memory usage: 22.8+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[377]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">titanic_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;age_group&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">Survived</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>age_group
+0-9      0.593750
+10-19    0.382609
+20-29    0.365217
+30-39    0.445161
+40-49    0.383721
+50-59    0.404762
+60-69    0.235294
+70-80    0.200000
+Name: Survived, dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[378]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">titanic_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span><span class="s1">&#39;age_group&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">Survived</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Sex     age_group
+female  0-9          0.612903
+        10-19        0.739130
+        20-29        0.753086
+        30-39        0.836364
+        40-49        0.677419
+        50-59        0.928571
+        60-69        1.000000
+male    0-9          0.575758
+        10-19        0.144928
+        20-29        0.154362
+        30-39        0.230000
+        40-49        0.218182
+        50-59        0.142857
+        60-69        0.071429
+        70-80        0.200000
+Name: Survived, dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[379]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Separando os valores para criação do gráfico</span>
+<span class="n">dados_homens</span> <span class="o">=</span> <span class="n">titanic_df</span><span class="p">[</span><span class="n">titanic_df</span><span class="o">.</span><span class="n">Sex</span> <span class="o">==</span> <span class="s2">&quot;male&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;age_group&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Survived</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+<span class="n">dados_mulheres</span> <span class="o">=</span> <span class="n">titanic_df</span><span class="p">[</span><span class="n">titanic_df</span><span class="o">.</span><span class="n">Sex</span> <span class="o">==</span> <span class="s2">&quot;female&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;age_group&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Survived</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[380]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Posicionamento no gráfico</span>
+<span class="n">posicao_homens</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">faixa_idades</span><span class="p">)))</span>
+<span class="n">posicao_mulheres</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">faixa_idades</span><span class="p">)))</span><span class="o">+</span><span class="mf">0.4</span>
+
+<span class="c1"># Plotagem</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">posicao_homens</span><span class="p">,</span> <span class="n">dados_homens</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Homens&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">posicao_mulheres</span><span class="p">,</span> <span class="n">dados_mulheres</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mulheres&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;pink&#39;</span><span class="p">)</span>
+
+<span class="c1"># Inserindo o faixa de idade</span>
+<span class="n">espacamento</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">faixa_idades</span><span class="p">)))</span><span class="o">+</span><span class="mf">0.4</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">espacamento</span><span class="p">,</span>  <span class="n">faixa_idades</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Proporcao&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Faixa de Idades&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Proporcao de Sobrevivente por Faixa de Idades / Sexo&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+AAAASUVORK5CYII=
 "
 >
 </div>
@@ -12723,9 +13519,7 @@ PPXGAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="6.-Based-on-the-scatterplot-created-from-the-code-above,-interpret-the-relationship-you-see.-What-do-you-notice?">6. Based on the scatterplot created from the code above, interpret the relationship you see. What do you notice?<a class="anchor-link" href="#6.-Based-on-the-scatterplot-created-from-the-code-above,-interpret-the-relationship-you-see.-What-do-you-notice?">&#182;</a></h4><p>R: Existe uma forte correlação entre os 3 primeiros tamanhos de Hashis (180, 210, 240).
-   Esta correlação foi perdida nos 3 Hashis de maior tamanho (270, 300, 330).</p>
-
+<h2 id="10.-Conclus&#227;o">10. Conclus&#227;o<a class="anchor-link" href="#10.-Conclus&#227;o">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12734,14 +13528,18 @@ PPXGAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="In-the-abstract-the-researchers-stated-that-their-results-showed-food-pinching-performance-was-significantly-affected-by-the-length-of-the-chopsticks,-and-that-chopsticks-of-about-240-mm-long-were-optimal-for-adults.">In the abstract the researchers stated that their results showed food-pinching performance was significantly affected by the length of the chopsticks, and that chopsticks of about 240 mm long were optimal for adults.<a class="anchor-link" href="#In-the-abstract-the-researchers-stated-that-their-results-showed-food-pinching-performance-was-significantly-affected-by-the-length-of-the-chopsticks,-and-that-chopsticks-of-about-240-mm-long-were-optimal-for-adults.">&#182;</a></h3><h4 id="7a.-Based-on-the-data-you-have-analyzed,-do-you-agree-with-the-claim?">7a. Based on the data you have analyzed, do you agree with the claim?<a class="anchor-link" href="#7a.-Based-on-the-data-you-have-analyzed,-do-you-agree-with-the-claim?">&#182;</a></h4><p>R: Não é possível afirmar isto.</p>
-<h4 id="7b.-Why?">7b. Why?<a class="anchor-link" href="#7b.-Why?">&#182;</a></h4><p>R: Porque não temos dados suficientes para esta afirmação e a amostra colhida é muito pequena para afirmar que este seria o melhor tamanho de Hashi para todos os adultos.</p>
-<p>Creio que teriamos que ter mais informações como:</p>
-<ul>
-<li>Altura das pessoas</li>
-<li>Tamanho da mão das pessoas testadas</li>
-</ul>
-<p>Adultos tem variações grandes em relação a altura e tamanho das mãos, que podem implicar na manipulação do Hashi.</p>
+<p>De acordo com os dados analisados nos itens acima, chegamos a algumas conclusões:</p>
+<h4 id="Em-rela&#231;&#227;o-as-idades:">Em rela&#231;&#227;o as idades:<a class="anchor-link" href="#Em-rela&#231;&#227;o-as-idades:">&#182;</a></h4><ol>
+<li>Pessoas com idades entre 20-29 e 30-39 tiveram a maior quantidade de sobreviventes</li>
+<li>As faixas de idades acima dessas, tem uma queda constante</li>
+</ol>
+<h4 id="Em-rela&#231;&#227;o-ao-sexo:">Em rela&#231;&#227;o ao sexo:<a class="anchor-link" href="#Em-rela&#231;&#227;o-ao-sexo:">&#182;</a></h4><ol>
+<li>Nitidamente, as pessoas do sexo feminino tiveram a maior quantidade de sobreviventes</li>
+<li>Notamos também uma curva de crescimento conforme a idade das mulheres foi aumentando</li>
+</ol>
+<h4 id="Poss&#237;veis-motivos:">Poss&#237;veis motivos:<a class="anchor-link" href="#Poss&#237;veis-motivos:">&#182;</a></h4><ol>
+<li>Uma suposição com relação ao fato de mulheres e mulheres com idades mais avançadas terem o maior número de sobreviventes, pode ser devido ao fato de ser dada prioridade para crianças, mulheres e idosos na utilização dos primeiros botes salva vidas</li>
+</ol>
 
 </div>
 </div>
